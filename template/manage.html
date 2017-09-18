@@ -1,0 +1,44 @@
+<div ng-controller="manage">
+
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <div class="option-menu container">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default choose-all">全选</button>
+            <button type="button" class="btn btn-default reverse">反选</button>
+            <button type="button" class="btn btn-default unselect">取消</button>
+            <button type="button" class="btn btn-default moveIt">移动</button>
+        </div>
+    </div>
+    <ul class="list-group " style="margin:35px 0 0 0;">
+       <li class="list-group-item list-group-item-info" style="color: #33bff3;height: 50px"
+            ng-repeat="carName in myDevList">
+        <span data-imei="{{myDevList[$index].did}}"
+              style="display: inline-block;width: 200px;height: 25px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{myDevList[$index].dname}}</span>
+            <input class="badge choose" data-imei="{{myDevList[$index].did}}" data-old="{{myDevList[$index].jname}}" type="checkbox"/>
+            <a  class="rename badge" data-did="{{myDevList[$index].did}}" data-name="{{myDevList[$index].dname}}"  style="margin-right: 20px;position: absolute;right: 50px">修改</a>
+        </li>
+    </ul>
+    <!-------------------------------------------------------------------------------------------------------------->
+    <div class="move" style="display: none">
+        <div class="move-group-choose">
+            <h4>移动到：</h4>
+            <select name="" id="groupName" ng-model="selected" ng-options="a.jname for a in mydata">
+
+            </select>
+            <div style="text-align: center">
+                <button class="btn  btn-default cancel">取消</button>
+                <button class="btn  btn-primary moveDevice">确定</button>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------------------------------------------------->
+    <div class="rename-device" style="display: none">
+        <div class="rename-device-body">
+            <label>请输入新的设备名：</label>
+            <input id="newName" type="text"/>
+            <button class="btn btn-default re-close">取消</button>
+            <button class="btn btn-primary re-name">确定</button>
+        </div>
+    </div>
+</div>

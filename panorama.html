@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=v56jZ8x7GCwaY4mF3wDVozrN"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--
+    <script type="text/javascript" src="js/back-icon.js"></script>
+-->
+    <link rel="stylesheet" href="css/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="css/panorama.css"/>
+    <title></title>
+</head>
+<body>
+<div class="nav">
+    <a class="back" href="javascript:void(0);"><i class="iconfont">&#xe60e;</i></a><!--<span>message</span>-->
+</div>
+<div class="container">
+    <div id="panorama"></div>
+</div>
+<script>
+    var panorama = new BMap.Panorama("panorama");
+    panorama.setPov({heading: -40, pitch: 6});
+    getJs = function () {
+
+        var pos, str, para, parastr;
+
+        array = {};
+
+        str = location.href;
+
+        parastr = str.split("?")[1];
+
+        var arr = parastr.split("&");
+
+        for (var i = 0; i < arr.length; i++) {
+
+            array[arr[i].split("=")[0]] = arr[i].split("=")[1];
+
+        }
+
+        return  array;
+
+    };
+    document.onreadystatuschange = getJs();
+    console.log(array);
+    var point = new BMap.Point(array.lng, array.lat);
+    panorama.setPosition(point);
+    $('.back').click(function () {
+        history.back();
+    })
+
+</script>
+</body>
+</html>

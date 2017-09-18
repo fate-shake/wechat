@@ -1,0 +1,34 @@
+<div class="group" ng-controller="myGroup">
+    <ul class="panel panel-default">
+        <li class="panel-heading" ng-repeat="i in mydata">
+            <a href="#/manage/{{mydata[$index].jname}}" style="display: block"> {{mydata[$index].jname}}
+                <span class="pull-right"><img src="./img/right.png" alt=">>" height="22"/></span>
+            </a>
+            <a class="renameGroup badge pull-right manage" data-Gname="{{mydata[$index].jname}}">重命名</a>
+            <a class="delGroup badge pull-right manage" data-Gname="{{mydata[$index].jname}}">删除</a>
+        </li>
+    </ul>
+    <div class="new-group" style="display: none">
+        <div class="new-group-name">
+            <label style="float:left">请输入新组名：</label>
+            <input type="text" id="newGname" placeholder="新组名"/>
+            <button class="btn btn-default unChange">取消</button>
+            <button class="btn btn-primary re-gName">确定</button>
+        </div>
+    </div>
+    <div class="add-group" style="display: none">
+        <div class="add-group-content">
+            <label style="float:left">请输入创建的组名：</label>
+            <input type="text" id="addGname"/>
+            <button class="btn btn-default unfound">取消</button>
+            <button class="btn btn-primary found">确定</button>
+        </div>
+    </div>
+    <div class="delete-group" style="display: none">
+        <div class="delete-group-content">
+            <h4>是否删除该组？</h4>
+            <button class="btn btn-default undelete">取消</button>
+            <button class="btn btn-primary delete">确定</button>
+        </div>
+    </div>
+</div>

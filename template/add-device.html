@@ -1,0 +1,35 @@
+<div class="container" ng-controller="addDevice">
+    <form ng-submit="processForm()" name="my_Form" id="myForm">
+        <!-- IMEI -->
+        <div id="IMEI-group" class="form-group" has-feedback>
+            <label>IMEI</label>
+            <input type="tel" required id="imei" name="imei" class="form-control" placeholder="设备IMEI"
+                   ng-model="formData.imei">
+            <span class=" form-control-feedback"
+                  ng-show="my_Form.imei.$dirty && my_Form.imei.$valid"></span>
+        </div>
+
+        <!--  激活码 -->
+        <div id="KEY-group" class="form-group">
+            <label>激活码</label>
+            <input type="tel" name="key" required id="key" class="form-control" placeholder="激活码" ng-model="formData.key">
+            <span class="help-block"></span>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <input type="submit" ng-disabled="my_Form.$invalid" value="提交" id="submit-btn"
+               class="submitAgain btn btn-primary  btn-block"/>
+
+
+    </form>
+    <div class="input_tips">
+        <p style="color: red">提示：</p>
+
+        <p>
+            IMEI和激活码都可以从你的设备上获得。
+        </p>
+    </div>
+    <div class="show">
+
+    </div>
+</div>

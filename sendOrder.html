@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/back-icon.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/fontIcon/iconfont.css"/>
+    <link rel="stylesheet" href="css/sendOrder.css"/>
+    <script src="js/angular.js"></script>
+    <script src="js/sendOrder.js"></script>
+    <title>发送指令</title>
+</head>
+<body ng-app="myApp">
+<div class="nav navbar-inverse navbar-fixed-top addCarTitle">
+    <h2>
+        <a href="#" class="back-icon pull-left"><i class="iconfont">&#xe60e;</i></a>
+        发送指令
+    </h2>
+</div>
+<div class="container">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseOne">
+                        监听
+                        <i class="iconfont pull-right">&#xe633;</i>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>监听号码
+                        <input type="number"/>
+                        <button type="submit" id="tel" class="btn  btn-primary  telSend">发送</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseTwo">
+                        速度报警
+                        <i class="iconfont pull-right">&#xe633;</i>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>超速设置
+                        <input type="number"/>
+                        <button type="submit" id="overSpeed" class="btn  btn-primary overSpeed">发送</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseThree">
+                        断油电
+                        <i class="iconfont pull-right">&#xe633;</i>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        <select>
+                            <option value="reset">恢复油电</option>
+                            <option value="stop">断油电</option>
+                        </select>
+                        <button type="submit" id="energy" class="btn  btn-primary energy">发送</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseFour">
+                        工作模式
+                        <i class="iconfont pull-right">&#xe633;</i>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        <select>
+                            <option value="long">长开模式</option>
+                            <option value="power">省电模式</option>
+                            <option value="sleep">睡眠模式</option>
+                            <option value="winterSleep">冬眠模式</option>
+                        </select>
+                        <button type="submit" id="myModel" class="btn  btn-primary myModel">发送</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseFive">
+                        震动报警
+                        <i class="iconfont pull-right">&#xe633;</i>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>
+                        震动等级
+                        <select id="shakeLv">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3" class="active">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </p>
+
+
+                    持续时间(1-60)
+                    <input type="number" id="shakeTime">
+
+                    <p>
+                        <button type="submit" id="ring" class="btn  btn-primary shake">发送</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion"
+                       href="#collapseSix">
+                        更多
+                        <i class="iconfont pull-right">&#xe633;</i>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <a class="btn btn-danger" href="#">更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="s_tip" class="tip" style="display: none">
+    <div id="s_tips">
+        <p>设置成功！</p>
+        <hr/>
+        <p>
+            <button class="btn btn-success closeBtn">确认</button>
+        </p>
+    </div>
+</div>
+<div id="e_tip" class="tip" style="display: none">
+    <div id="e_tips">
+        <p>设置失败！请重新设置</p>
+        <hr/>
+        <p>
+            <button class="btn btn-success closeBtn">确认</button>
+        </p>
+    </div>
+</div>
+</body>
+</html>

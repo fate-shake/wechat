@@ -1,0 +1,215 @@
+<div class="container" ng-controller="directive">
+<div class="myPanel" ng-show="fence">
+    <div class="panel panel-default">
+        <div class="panel-heading ">
+            <a id="fencing" style="display: block" href="">
+                围栏
+            </a>
+        </div>
+    </div>
+</div>
+<div class="myPanel" ng-show="centerTel">
+    <div class="panel panel-default isHide">
+        <div class="panel-heading ">
+            <a>
+                中心号码
+            </a>
+        </div>
+    </div>
+    <div class="hideBody" style="display: none">
+        <div>
+            <div class="panel-body">
+
+                <p>中心号码：<input type="tel" id="center"/><br/><br/>
+                    <button type="submit" id="addCenterTel" class="btn  btn-primary  center  addCenterTel">设置</button>
+                    <button type="submit" id="delCenterTel" class="btn  btn-danger  center   delCenterTel">删除</button>
+                </p>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="myPanel" ng-show="sos">
+    <div class="panel panel-default isHide">
+        <div class="panel-heading ">
+            <a>
+                SOS号码
+            </a>
+        </div>
+    </div>
+    <div class="hideBody" style="display: none">
+        <div>
+            <div class="panel-body">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                                1
+                            </span>
+                    <input type="tel" id="sos1" ng-model='sos1' class="form-control" aria-label="...">
+                            <span class="input-group-addon">
+                                <input id="ckb1" type="checkbox" aria-label="...">
+                            </span>
+                </div>
+                <div class="input-group">
+                     <span class="input-group-addon">
+                                2
+                            </span>
+                    <input type="tel" id="sos2" ng-model='sos2' class="form-control" aria-label="...">
+                            <span class="input-group-addon">
+                                <input id="ckb2" type="checkbox" aria-label="...">
+                            </span>
+                </div>
+                <div class="input-group">
+                     <span class="input-group-addon">
+                                3
+                            </span>
+                    <input type="tel" id="sos3" ng-model='sos3' class="form-control" aria-label="...">
+                            <span class="input-group-addon">
+                                <input id="ckb3" type="checkbox" aria-label="...">
+                            </span>
+                </div>
+                <p style="padding: 5px">
+                    <button type="submit" class="btn  btn-primary  center   addsosTel">添加</button>
+                    <button type="submit" class="btn  btn-danger  center   delsosTel">删除</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="myPanel" ng-show="listen">
+    <div class="panel panel-default isHide">
+        <div class="panel-heading ">
+            <a>
+                监听号码
+            </a>
+        </div>
+    </div>
+    <div class="hideBody" style="display: none">
+        <div>
+            <div class="panel-body">
+
+                <p>监听号码：<input type="tel" id="listen"/>
+                    <button type="submit" id="addListenTel" class="btn  btn-primary  center  addListenTel">设置</button>
+                </p>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="myPanel" ng-show="speed">
+    <div class="panel panel-default isHide ">
+        <div class="panel-heading ">
+            <a>
+                速度报警
+            </a>
+        </div>
+    </div>
+    <div class="hideBody" style="display: none">
+        <div>
+            <div class="panel-body">
+                <form action="">
+                    <p>低速设置(KM/H)
+                        <input required id="lowSpeed" type="tel"/>
+                    </p>
+
+                    <p>超速设置(KM/H)
+                        <input required id="overSpeed" type="tel"/>
+                    </p>
+
+                    <div class="speedCtrl">
+                        <a  class="btn  btn-info   addSpeedwarn">设置</a>
+                        <button  class="btn  btn-danger   delSpeedCtrl">删除</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="myPanel" ng-show="energy">
+    <div class="panel panel-default isHide">
+        <div class="panel-heading ">
+            <a>
+                断油电
+            </a>
+        </div>
+    </div>
+    <div class="hideBody" style="display: none">
+        <div>
+            <div class="panel-body">
+                <p>
+                    <select id="energy">
+                        <option value="reset">恢复油电</option>
+                        <option value="stop">断油电</option>
+                    </select>
+                    <button type="submit" class="btn  btn-primary energy">设置</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="myPanel" ng-show="saving">
+    <div class="panel panel-default isHide">
+        <div class="panel-heading ">
+            <a>
+                工作模式
+            </a>
+        </div>
+    </div>
+    <div class="hideBody" style="display: none">
+        <div>
+            <div class="panel-body">
+                <p>
+                    <select id="saving">
+                        <option value="long">长开模式</option>
+                        <option value="power">省电模式</option>
+                        <option value="sleep">睡眠模式</option>
+                        <option value="winterSleep">冬眠模式</option>
+                    </select>
+                    <button type="submit" id="myModel" class="btn  btn-primary saving">设置</button>
+                </p>
+                <p style="text-align: left">
+                    长开模式：GPS一直开启 <br/>
+                    省电模式：GPS在查询地址和移动终端时开启 <br/>
+                    睡眠模式：GPS仅在查询地址时开启 <br/>
+                    冬眠模式：GPS不开启
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="myPanel" ng-show="shake">
+    <div class="panel panel-default isHide">
+        <div class="panel-heading ">
+            <a>
+                震动报警
+            </a>
+        </div>
+    </div>
+    <div class="hideBody" style="display: none">
+        <div>
+            <div class="panel-body">
+                <p style="text-align: left">
+                    震动等级
+                    <select id="shakeLv" style="padding: 0 10px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" class="active">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </p>
+                持续时间
+                <input type="tel" id="shakeTime">
+                <br/>
+                <button type="submit" id="ring" class="btn  btn-primary shake">设置</button>
+                <button type="submit" class="btn  btn-danger delShake">删除</button>
+                <br/>
+                持续时间范围：0 ~ 60 单位：分钟
+            </div>
+        </div>
+    </div>
+</div>
+</div>

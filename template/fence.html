@@ -1,0 +1,81 @@
+<div class="fence" ng-controller="fence">
+    <div id="fence-map">
+
+    </div>
+    <div class="fence-now">
+        <p id="fenceMessage">
+            当前围栏编号：
+        </p>
+    </div>
+    <div class="fence-radius">
+        <div class="fence-radius-wrap">
+            <span class="radius" ng-click="setRadius('-')"><img src="./img/minus_alt.png" alt="-"/></span>
+            <input id="radius-slider" type="range" min="0" step="1" max="{{dime}}" value="300" oninput="sliderTouch()" onchange="sliderTouch()" style="display: inline-block;width: 75%" />
+            <span class="radius" ng-click="setRadius('+')"><img src="./img/plus_alt.png" alt="+"/></span>
+        </div>
+        <div class="radius-select">
+            <select ng-model="dime" ng-options="dime for dime in dimes"></select>
+        </div>
+        <div>
+            <h3 style="text-align: center;margin: 0">半径： <span ng-bind="radius"></span></h3>
+        </div>
+    </div>
+    <div class="bottom-menu">
+        <div class="wrap-menu">
+            <div class="btn-group dropup">
+                <button type="button" class="btn btn-default dropdown-toggle switch" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    查询
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a id="query1" class="query">围栏一</a></li>
+                    <li><a id="query2" class="query">围栏二</a></li>
+                    <li><a id="query3" class="query">围栏三</a></li>
+                </ul>
+            </div>
+            <div class="btn-group dropup">
+                <button type="button" class="btn btn-default dropdown-toggle setFC" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    设置
+                </button>
+            </div>
+            <div class="btn-group dropup">
+                <button type="button" class="btn btn-default dropdown-toggle switch" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    删除
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a  class="delFC" id="1" >围栏一</a></li>
+                    <li><a class="delFC" id="2">围栏二</a></li>
+                    <li><a class="delFC" id="3">围栏三</a></li>
+                    <li><a  class="delFC">全部</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="argument" style="display: none">
+        <div class="arg-warp">
+            <div class="select">
+                <select name="type" id="type">
+                    <option selected value="进入">进入</option>
+                    <option value="超出">超出</option>
+                    <option value="跨越">跨越</option>
+                </select>
+            </div>
+            <div class="select">
+                <select name="index" id="index">
+                    <option selected value="围栏一">围栏一</option>
+                    <option value="围栏二">围栏二</option>
+                    <option value="围栏三">围栏三</option>
+                </select>
+            </div>
+            <!--<div class="select">-->
+                <!--<select name="shape" id="shape" onchange="change()">-->
+                    <!--<option selected value="circle">圆形</option>-->
+                    <!--<option  value="square">矩形</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <button id="setFence" class="btn btn-block btn-primary select">提交</button>
+        </div>
+    </div>
+</div>

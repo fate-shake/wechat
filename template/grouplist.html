@@ -1,0 +1,28 @@
+<div ng-controller="g_l_group">
+    <ul class="panel panel-default" style="margin-bottom: 0">
+        <li href="#/list/{{part_one[$index].jname}}" class="panel-heading " ng-repeat="i in part_one">
+            <a href="#/list/{{part_one[$index].jname}}" style="display: block">
+                {{part_one[$index].jname}}
+                <span class="pull-right">{{part_one[$index].online_num}}/{{part_one[$index].dnum}}</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="list-group " style="width: 95%;margin:0 0 0 5%;">
+        <li class="list-group-item list-group-item-info" style="color: green;height: 50px"
+            ng-repeat="i in devlist">
+        <span data-imei="{{devlist[$index].did}}"
+              style="display: inline-block;width: 200px;height: 25px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{devlist[$index].dname}}</span>
+            <a href="#/pBack/{{devlist[$index].did}}&&{{devlist[$index].name}}" class="badge pBack">回放</a>
+            <a href="#/follow/{{devlist[$index].did}}&&{{devlist[$index].name}}&&{{devlist[$index].ptc}}"
+               class="badge follow" style="margin-right: 20px;position: absolute;right: 50px">跟踪</a>
+        </li>
+    </ul>
+    <ul class="panel panel-default" style="margin-bottom: 0">
+        <li class="panel-heading" ng-repeat="i in part_two">
+            <a href="#/list/{{part_two[$index].jname}}" style="display: block">
+                {{part_two[$index].jname}}
+                <span class="pull-right">{{part_two[$index].online_num}}/{{part_two[$index].dnum}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

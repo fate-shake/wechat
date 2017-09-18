@@ -1,0 +1,119 @@
+<div ng-controller="pBack">
+    <div id="pBackMap">
+    </div>
+    <div class="slider-box progress">
+        <input id="slider" type="range" max="{{polyData.length-1}}" onchange="playHere()" oninput="playHere()" min="0" />
+    </div>
+    <div class="control_btn">
+        <div id='play' class="btn-group" play role="group" aria-label="..."><img id="playIcon" src="./img/play.png" alt="play"/></div>
+        <div id='speed' class="btn-group" role="group" aria-label="..."><img id="speedIcon" src="./img/slow.png" alt="play"/></div>
+        <div id='choose' class="btn-group" role="group" aria-label="..."><img src="./img/time.png" alt="play"/></div>
+        <div id="list" class="btn-group" role="group" aria-label="..."><img src="./img/list.png" alt="play"/></div>
+    </div>
+    <div class="secList">
+        <div class="list">
+            <div class="total">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <p style="margin: 50% auto">
+                            总行程
+                        </p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>开始时间</p>
+
+                        <p>结束时间</p>
+
+                        <p>行驶时间</p>
+
+                        <p>停留时间</p>
+
+                        <p>行驶里程</p>
+
+                        <p>平均速度</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>{{pbData.totalData[0]}}</p>
+
+                        <p>{{pbData.totalData[1]}}</p>
+
+                        <p>{{pbData.totalData[2]}}</p>
+
+                        <p>{{pbData.totalData[3]}}</p>
+
+                        <p>{{pbData.totalData[4] | number:2}}公里</p>
+
+                        <p>{{pbData.totalData[5] |number:2}}公里/时</p>
+                    </div>
+                </div>
+            </div>
+            <div class="childrenList">
+                <ul>
+                    <li ng-repeat="i in pbData.sec_Datas" subsection id="{{$index}}" ng-class-odd="'wathet'" ng-class-even="'orange'">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p style="margin: 50% auto">
+                                    第{{$index+1}}段
+                                </p>
+                            </div>
+                            <div class="col-xs-3">
+                                <p>开始时间</p>
+
+                                <p>结束时间</p>
+
+                                <p>行驶时间</p>
+
+                                <p>停留时间</p>
+
+                                <p>行驶里程</p>
+
+                                <p>平均速度</p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>{{pbData.sec_Datas[$index][0]}}</p>
+                                <p>{{pbData.sec_Datas[$index][1]}}</p>
+                                <p>{{pbData.sec_Datas[$index][2]}}</p>
+                                <p>{{pbData.sec_Datas[$index][3]}}</p>
+                                <p>{{pbData.sec_Datas[$index][4] | number:2}}公里</p>
+                                <p>{{pbData.sec_Datas[$index][5] |number:2}}公里/时</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="date">
+        <div id="date">
+            <form id="detailTime" class="time">
+                <div class="form-group">
+                    <label for="appDateTime0">起始时间</label>
+                    <input type="text" class="form-control" id="appDateTime0" name="appDateTime0">
+                </div>
+                <div class="form-group">
+                    <label for="appDateTime1">截止时间</label>
+                    <input type="text" class="form-control" id="appDateTime1" name="appDateTime1">
+                </div>
+                <div style="text-align: center">
+                    <button class="btn  btn-default cancel0" style="margin: 0 10px">取消</button>
+                    <button type="submit" id="detailDate" class="btn  btn-primary" style="margin: 0 10px">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="express" class="express">
+        <div class="expressTime">
+                <form id="expressForm" class="form-group">
+                    <label>选择列表</label>
+                    <select name="time" id="chooseTime" class="form-control" onchange="listen()">
+                        <option value="oneday">今天</option>
+                        <option value="twoday">昨天</option>
+                        <option value="threeday">前天</option>
+                        <option value="youlike">自定义</option>
+                    </select>
+                    <button class="btn  btn-default cancel1">取消</button>
+                    <button id="expressDate" class="btn  btn-primary">确定</button>
+                </form>
+        </div>
+    </div>
+</div>

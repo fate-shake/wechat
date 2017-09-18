@@ -1,0 +1,28 @@
+<div ng-hide="mydata" style="margin: 50% auto;text-align: center;">
+    <img src="./img/dataload.gif" alt="loading..."/>
+</div>
+<uib-accordion close-others="oneAtATime">
+        <div uib-accordion-group class="panel-default"  ng-repeat="i in mydata" ng-click='show(this)' >
+           <uib-accordion-heading>
+            {{mydata[$index].jname}}
+            <span class="pull-right">{{mydata[$index].online_num}}/{{mydata[$index].dnum}}</span>
+        </uib-accordion-heading>
+	<div>
+            <ul style="border: 1px solid #ddd">
+                <li ng-repeat="dev in devlist"   style="border-bottom: 1px solid #ccc;padding: 8px">
+                    <span>{{devlist[$index].dname}}</span>
+                    <a href="#/pBack/{{devlist[$index].did}}&&{{devlist[$index].dname}}" class="btn btn-sm btn-link pull-right pBack" style='padding:3px 5px;margin: 0 5px;border-radius:0;color:#fff'>回放</a>
+                    <a href="#/follow/{{devlist[$index].did}}&&{{devlist[$index].dname}}" class="btn btn-sm btn-link pull-right" ng-class="{true:'follow',false:'nofollow disabled'}[devlist[$index].sta == 1]"  style='padding:3px 5px;margin: 0 5px;border-radius:0;'>跟踪</a>
+
+                </li>
+            </ul>
+	<div ng-show="load">
+                loading......
+            </div>
+            <div ng-show="nodata">
+                该组无设备
+            </div>
+        </div>
+          
+        </div>
+</uib-accordion>
