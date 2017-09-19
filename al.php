@@ -2,7 +2,7 @@
 
 class cURl_post{
 	function __construct(){
-		 // $this->_path = "http://127.0.0.1:35585/data/sql/";
+		 // test $this->_path = "http://127.0.0.1:35585/data/sql/";
 		$this->_path = "http://demo.yuendong.com:7070/bgerp/sendWarnRecords";
 		$this->_path = "http://s-241587.abc188.com/bgerp/sendWarnRecords";
 		$this ->ch = curl_init($this->_path);
